@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Link to external Bootstrap file -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+		 <!-- Link to Stylesheet !-->
+		<link rel='stylesheet' href='/style.css'/>
+		<!-- Link to Google Fonts !-->
+		<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="page-header"><h1>Edit <%= images.title %></h1></div>
+<<!--  -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="/"> <button type="button" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</button></a>
+    </li>
+    <li>
+      <a href="/show"> <button type="button" class="btn btn-warning btn-lg">
+      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Show All Photos</button>
+      </a>
+    </li>
+    <li>
+      <a href="/posts"> <button type="button" class="btn btn-info btn-lg">
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Posts</button></a>
+    </li>
+    <li>
+      <form class="form" role="form" action ="/logout?_method=DELETE" method="POST" accept-charset="UTF-8" id="login-nav">
+      <div class="form-group">
+      <button type="submit" class="btn btn-default btn-block">Log Out</button>
+      </form>
+    </li>
+</ul>
+<!--  -->
+    
+
+	<form method="POST" action="/posts/<%= images.id %>?_method=PATCH">
+		<input type="text" name="loction" placeholder="Image Source" value="<%= images.imagesource %>"><br><br>
+		<input type="text" name="loction" placeholder="Location" value="<%= images.location %>"><br><br>
+		<input type="text" name="title" placeholder="Title" value="<%= images.title %>"><br><br>
+ 		<button type="submit" class="btn btn-success btn-lg">Submit</button>
+	</form>
+  <!-- jQuery !-->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
